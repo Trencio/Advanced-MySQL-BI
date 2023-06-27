@@ -72,4 +72,10 @@
 - When businesses run paid marketing campaigns, they often obsess over performance and measure everything, how much they spend, how well traffic converts to sales. 
 - Paid traffic is commonly tagged with tracking (UTM) parameters, which are appended to URLs and allow us to tie website activity back to specific traffic sources and campaigns. 
 
+## 9. Analyzing Seasonality & Business Patterns 
 
+<img src = "https://github.com/Trencio/SQL/blob/main/Business%20Concept:%20Analyzing%20Seasonallity%20%26%20Business%20Patterns.png" />
+
+## Common Use Cases: 
+- Day-parting analysis to understand how much support staff you should have at different times of day or days of the week
+- Analyzing seasonality to better prepare for upcoming spikes slowdowns in demand 
