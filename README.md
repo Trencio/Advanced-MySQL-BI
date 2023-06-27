@@ -78,4 +78,13 @@
 
 ## Common Use Cases: 
 - Day-parting analysis to understand how much support staff you should have at different times of day or days of the week
-- Analyzing seasonality to better prepare for upcoming spikes slowdowns in demand 
+- Analyzing seasonality to better prepare for upcoming spikes slowdowns in demand
+
+  ## 10. Product Sales Analysis
+
+  <img src = "https://github.com/Trencio/Advanced-MySQL-BI/blob/main/Business%20Concept:%20Product%20Level%20Sales%20Analysis.png" />
+
+  ## Common Use Cases:
+  -  Analying sales and revenue by product 
+  -  Monitoring the impact of adding a new product to your product portfolio
+  -  Watching product sales trends to understand the overall health of your business
