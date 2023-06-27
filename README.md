@@ -88,3 +88,12 @@
   -  Analying sales and revenue by product 
   -  Monitoring the impact of adding a new product to your product portfolio
   -  Watching product sales trends to understand the overall health of your business
+
+## 11. Product Level Website Analysis
+
+<img src = "https://github.com/Trencio/Advanced-MySQL-BI/blob/main/Business%20Concept:%20Product%20Level%20Website%20Analysis.png" /> 
+
+## Common Use Cases: 
+    - Understanding which of your products generate the most interest on multi - product showcase pages 
+    - Analyzing the impact on website conversion rates when you add a new product 
+    - Building product specific conversion funnels to understand whether certain products convert better than other
