@@ -27,4 +27,6 @@
 
 ## 2. Business Concept: Optimization 
 
-<img src = https://github.com/Trencio/SQL/blob/main/Business%20Concept:%20Optimization.png""/>
+<img src = "https://github.com/Trencio/SQL/blob/main/Business%20Concept:%20Optimization.png"/>
+
+
