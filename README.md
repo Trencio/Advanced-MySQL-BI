@@ -44,5 +44,9 @@
 # Common Use Cases: 
 - Identifying your top opportunities for landing pages - high volume pages with higher than expected bounce rates or low conversion rates 
 - Setting up A/B experiments on your live traffic to see if you can improve your bounce rates and conversion rates
-- Analyzing test results and making recommendations on which version of landing pages you should use going forward 
+- Analyzing test results and making recommendations on which version of landing pages you should use going forward
+
+## 5. Business Concept: Analyzing & Testing Conversion Funnels
+
+<img src = "https://github.com/Trencio/SQL/blob/main/Business%20Concept:%20Analyzing%20%26%20Testing%20Conversion%20Funnels.png" /> 
 
