@@ -21,3 +21,5 @@
 ## Screenshots
 
 ### 1. Business Concept Traffic Source Analysis
+
+<img src = "https://github.com/Trencio/SQL/blob/main/Business%20Concept%20Traffic%20Source%20Analysis.png" />
