@@ -40,3 +40,9 @@
 ## 4. Business Concept: Landing Page Performance & Testing 
 
 <img src = "https://github.com/Trencio/SQL/blob/main/Business%20Concept:%20Landing%20Page%20Performance%20%26%20Testing.png" />
+
+# Common Use Cases: 
+- Identifying your top opportunities for landing pages - high volume pages with higher than expected bounce rates or low conversion rates 
+- Setting up A/B experiments on your live traffic to see if you can improve your bounce rates and conversion rates
+- Analyzing test results and making recommendations on which version of landing pages you should use going forward 
+
