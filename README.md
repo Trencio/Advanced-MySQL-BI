@@ -1,4 +1,4 @@
-# SQL
+# Advanced SQL Data Analysis & Business Intelligence 
 
  <pre>
   1. Traffic Source Analysis
