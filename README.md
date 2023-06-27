@@ -55,4 +55,11 @@
 - Identifying how many of your users continue on to each next step in your conversion flow, and how many users abandon at each step
 - Optimizing critical pain points where users are abandoning, so that you can convert more users and sell more products.
 
+## 6. Business Concept: Channel Portfolio Optimization 
 
+<img src = "https://github.com/Trencio/SQL/blob/main/Business%20Concept:%20Channel%20Porfolio%20Optimization.png" />
+
+## Common Use Cases: 
+- Understanding which marketing channels are driving the most sessions and orders through your website
+- Understanding the differences in user characteristics and conversion performance across marketing channels 
+- Optimizing bids and allocating marketing spend across a multi channel portfolio to achieve maximum performance
