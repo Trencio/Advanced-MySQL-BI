@@ -63,3 +63,13 @@
 - Understanding which marketing channels are driving the most sessions and orders through your website
 - Understanding the differences in user characteristics and conversion performance across marketing channels 
 - Optimizing bids and allocating marketing spend across a multi channel portfolio to achieve maximum performance
+
+## 7. Business Concept: Tracking Parameters
+
+<img src = "https://github.com/Trencio/SQL/blob/main/Business%20Concept%20Traffic%20Source%20Analysis.png" /> 
+
+## Reasoning: 
+- When businesses run paid marketing campaigns, they often obsess over performance and measure everything, how much they spend, how well traffic converts to sales. 
+- Paid traffic is commonly tagged with tracking (UTM) parameters, which are appended to URLs and allow us to tie website activity back to specific traffic sources and campaigns. 
+
+
