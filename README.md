@@ -36,3 +36,7 @@
 # Reasoning: 
 - Analyzing for big optimization is about understanding the value of various segments of paid traffic, so that you can optimize your market budget. (Ex: telling the company which segments have a higher CV - - rate to finalize which to bid up and which segments to bid down on)
 -  Using conversion rate and revenue per click analyzes to figure out how much you should spend per click and acquire customers.
+
+## 4. Business Concept: Landing Page Performance & Testing 
+
+<img src = "https://github.com/Trencio/SQL/blob/main/Business%20Concept:%20Landing%20Page%20Performance%20%26%20Testing.png" />
