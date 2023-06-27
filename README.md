@@ -24,9 +24,15 @@
 
 <img src = "https://github.com/Trencio/SQL/blob/main/Business%20Concept%20Traffic%20Source%20Analysis.png" />
 
+# Common Use Cases: 
+ - analyzing search data and shifting budget towards the engines, campaigns or keywords driving the strongest conversion rates.
+ - Comparing user behaviour patterns across traffic sources to inform creative and messaging strategy
+ - Identifying opportunities to eliminate wasted spend or scale high - converting traffic.
 
 ## 2. Business Concept: Optimization 
 
 <img src = "https://github.com/Trencio/SQL/blob/main/Business%20Concept:%20Optimization.png"/>
 
-
+# Reasoning: 
+- Analyzing for big optimization is about understanding the value of various segments of paid traffic, so that you can optimize your market budget. (Ex: telling the company which segments have a higher CV - - rate to finalize which to bid up and which segments to bid down on)
+-  Using conversion rate and revenue per click analyzes to figure out how much you should spend per click and acquire customers.
