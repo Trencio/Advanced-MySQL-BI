@@ -1,21 +1,29 @@
 # Advanced SQL Data Analysis & Business Intelligence 
 
- <pre>
-  1. Traffic Source Analysis
-  2. Optimization 
-  3. Analyzing Top Website Content
-  4. Landing Page Performance & Testing
-  5. Analyzing & Testing Conversion Funnels 
-  6. Channel Portfolio Optimization 
-  7. Tracking Parameters 
-  8. Analyzing Direct Traffic 
-  9. Analyzing Sesonality & Business Patterns 
-  10. Product Sales Analysis 
-  11. Product Level Website Analysis
-  12. Cross Selling Products
-  13. Tracking Repeat Customers Across Multiple Sessions 
-   
-  </pre>
+
+## Traffic Analysis & Optimization 
+
+In this section  i used MySQL to analyze where our website traffic is coming from, how different sources perform in terms of traffic volume and conversion rates, and how i can adjust bids to optimize our budgets.
+
+## Website Measurement & Testing
+
+In this section i  dived into page-level website data to compare traffic and conversion rates, and use MySQL to build and analyze conversion funnels to help optimize the customer purchase experience.
+
+
+## Channel Analysis & Optimization
+
+In this section i dove deeper into  traffic channel mix, explore paid vs. free traffic, break down performance by device type, and write advanced SQL queries to conduct some time-series analyses to understand trending and seasonality.
+
+## Product-Level Analysis
+
+In this section I used  MySQL to break down product-level sales and conversion rates, analyze cross-selling patterns, and use refund rates to keep a pulse on quality.
+
+## User-Level Analysis
+
+In this section i took  take a closer look at user behavior and repeat sessions, and use MySQL techniques to identify the most valuable customers and explore which channels they are coming from.
+
+
+
 
 
 ## Screenshots
