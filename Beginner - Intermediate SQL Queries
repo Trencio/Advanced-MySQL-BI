@@ -1,0 +1,170 @@
+1. Write a SQL query to find those employees who get a higher salary than the employee whose ID is 163. Return first name, last name.
+
+SELECT first_name, last_name 
+FROM employees 
+WHERE salary > ( SELECT salary  
+FROM employees 
+WHERE employee_id=163
+);
+
+2. Write a SQL query to find those employees whose designation is the same as the employee whose ID is 169. Return first name, last name, department ID and job ID.
+
+SELECT first_name, last_name, salary, department_id, job_id 
+FROM employees 
+WHERE job_id =  ( SELECT job_id  
+FROM employees  
+WHERE employee_id=169
+);
+
+3. Write a SQL query to find those employees whose salary matches the smallest salary of any of the departments. Return first name, last name and department ID.
+
+SELECT first_name, last_name, salary, department_id  
+FROM employees  
+WHERE salary IN  ( SELECT MIN(salary)  
+FROM employees  
+GROUP BY department_id 
+);
+
+4. Write a SQL query to find those employees who earn more than the average salary. Return employee ID, first name, last name. 
+
+SELECT employee_id, first_name,last_name  
+FROM employees  
+WHERE salary >  ( SELECT AVG(salary)  
+FROM employees 
+);
+
+5. Write a SQL query to find those employees who report that manager whose first name is ‘Payam’. Return first name, last name, employee ID and salary.
+
+SELECT first_name, last_name, employee_id, salary  
+FROM employees  
+WHERE manager_id = (SELECT employee_id  
+FROM employees  
+WHERE first_name = 'Payam' 
+);
+
+6. Write a SQL query to find those employees whose salary is in the range of smallest salary, and 2500. Return all the fields.
+SELECT * 
+FROM employees 
+WHERE salary BETWEEN  (SELECT MIN(salary) 
+FROM employees) AND 2500;
+
+7. Write a SQL query to find those employees whose department is located at 'Toronto'. Return first name, last name, employee ID, job ID.
+SELECT  first_name, last_name, employee_id, job_id  
+FROM employees  
+WHERE department_id = (SELECT department_id  
+FROM departments 
+WHERE location_id = (SELECT location_id 
+FROM locations  
+WHERE city ='Toronto'));
+
+8. Write a SQL query to find those employees who earn more than the average salary and work in a department with any employee whose first name contains a character a 'J'. Return employee ID, first name and salary.
+
+SELECT employee_id, first_name , salary  
+FROM employees  
+WHERE salary > (SELECT AVG (salary)  
+FROM employees ) 
+AND  department_id IN ( SELECT department_id  
+FROM employees  
+WHERE first_name LIKE '%J%');
+
+9. Write a SQL query to find those employees who work in a department where the employee’s first name contains a letter 'T'. Return employee ID, first name and last name.
+
+SELECT employee_id, first_name, last_name  
+FROM employees  
+WHERE department_id IN  ( SELECT department_id  
+FROM employees  
+WHERE first_name LIKE '%T%' );
+
+10. Write a SQL query to find those employees who work in the same department where 'Clara' works. Exclude all those records where the first name is 'Clara'. Return first name, last name and hire date.
+        
+SELECT first_name, last_name, hire_date  
+FROM employees  
+WHERE department_id =  ( SELECT department_id  
+FROM employees  
+WHERE first_name = 'Clara')  
+AND first_name <> 'Clara';
+
+11. Write a SQL query to find those employees who get the second-highest salary. Return all the fields of the employees.
+
+SELECT * 
+FROM employees 
+WHERE salary = (SELECT MAX(salary) 
+FROM employees 
+WHERE salary < (SELECT MAX(salary) 
+FROM employees)
+);
+
+12. Write a SQL query to find those employees who do not work in those departments where manager ids are in between 100 and 200. Return all the fields of the employees.
+
+SELECT * 
+FROM employees 
+WHERE department_id NOT IN (SELECT department_id 
+FROM departments 
+WHERE manager_id BETWEEN 100 AND 200);
+
+13. Write a SQL query to find those employees who work in the department 'Marketing'. Return first name, last name and department ID.
+
+SELECT first_name, last_name, department_id 
+FROM employees 
+WHERE department_id = (SELECT department_id 
+FROM departments 
+WHERE department_name = 'Marketing');
+
+14. Write a SQL query to find those employees whose salary matches to the salary of the employee who works in that department of ID 40. Return first name, last name, salary, and department ID.
+
+
+SELECT first_name, last_name, salary, department_id 
+FROM employees
+WHERE salary IN (SELECT salary 
+ FROM employees 
+WHERE department_id = 40);
+
+15. Write a SQL query to find those employees who work in the department  where the employee with employee_id=201 works. Return first name, last name, salary, and department ID.
+        
+        
+  SELECT first_name, last_name, salary, department_id 
+  
+  FROM employees 
+  WHERE department_id = (SELECT department_id 
+  FROM employees 
+  WHERE employee_id = 201);
+
+16. Write a SQL query to find those employees who earn more than the maximum salary of a department of ID 40. Return first name, last name and department ID.
+        
+SELECT first_name, last_name, salary, department_id 
+FROM employees
+WHERE salary > ALL (SELECT salary 
+FROM employees 
+WHERE department_id = 40);
+
+17. Write a SQL query to find those employees who work in departments located at 'United Kingdom’. Return first name.
+
+SELECT first_name 
+FROM employees 
+WHERE department_id IN (SELECT department_id 
+FROM departments 
+WHERE location_id IN (SELECT location_id 
+FROM locations 
+WHERE country_id = (SELECT country_id 
+FROM countries 
+WHERE country_name='United Kingdom')
+)
+);
+
+18. Write a query to display the employee id, name ( first name and last name ), salary and the SalaryStatus column with a title HIGH and LOW respectively for those employees whose salary is more than and less than the average salary of all employees.
+
+SELECT  employee_id,  first_name, last_name, salary
+CASE WHEN salary >= (SELECT AVG(salary) FROM employees) THEN 'HIGH'  
+ELSE 'LOW'  
+END AS SalaryStatus 
+FROM employees;
+
+19. Write a query to display the employee id, name ( first name and last name ), Salary, AvgCompare (salary - the average salary of all employees) and the SalaryStatus column with a title HIGH and LOW respectively for those employees whose salary is more than and less than the average salary of all employees.
+
+SELECT employee_id, first_name, last_name, salary AS Salary
+ROUND((salary -(SELECT AVG(salary) FROM employees)),2) AS AvgCompare
+CASE WHEN salary >= (SELECT AVG(salary) FROM employees) THEN 'HIGH' ELSE 'LOW' END AS SalaryStatus 
+FROM employees;
+Shared in
+only-sql
+
