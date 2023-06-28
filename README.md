@@ -1,5 +1,13 @@
 # Advanced SQL Data Analysis & Business Intelligence 
 
+### Functions Used:
+1. Creating Temporary Tables
+2. Date Functions: YEAR(), QUARTER(), MONTH(), WEEK(), DATE(), NOW(), DATEDIFF() )
+3. "Pivot method" With Case & Count
+4. Using Subqueries
+5. Using Key Business Terms: REVENUE, ORDERS, MARGIN, AOV
+
+
 
 ## Traffic Analysis & Optimization 
 
