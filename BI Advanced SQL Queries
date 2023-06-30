@@ -1,0 +1,70 @@
+-- First, I'd like to show our volume growth can you pull session and order volume, trended by quarter for the life of the business? 
+-- since the most recent quarter is incomplete, you can decide how to handle it. 
+
+select 
+year(website_sessions.created_at) as yr,
+quarter(website_sessions.created_at) as qtr,
+count(distinct website_sessions.website_session_id) as sessions,
+count(distinct orders.order_id) as orders
+from website_sessions 
+left join orders
+on website_sessions.website_session_id = orders.website_session_id
+group by 1,2
+order by 1,2 
+;
+
+
+-- Next, let's showcase all of our efficiency improvements, i would love to show quarterly figures since we launched, 
+-- for session-to-order conversion rate, revenue per order, and revenue per session. 
+
+select
+year(website_sessions.created_at) as yr,
+quarter(website_sessions.created_at) as qtr,
+count(distinct orders.order_id) / count(distinct website_sessions.website_session_id) as session_to_order_cov_rate,
+sum(price_usd)/ count(distinct orders.order_id) as revenue_per_order,
+sum(price_usd)/count(distinct website_sessions.website_session_id) as revenue_per_session
+from website_sessions
+left join orders
+on website_sessions.website_session_Id = orders.website_session_id
+group by 1,2
+order by 1,2 ;
+
+-- i'd like to show how we've grown specific channels. Could you pull a quartely view of orders from Gsearch nonbrand,
+-- Bsearch nonbrand, brand search overall, organic search, and direct type-in?
+
+select
+year(website_sessions.created_at) as yr,
+quarter(website_sessions.created_at) as qtr,
+count(distinct case when utm_source = 'gsearch' and utm_campaign = 'nonbrand' then orders.order_id else null end) as gsearch_nonbrand_orders,
+count(distinct case when utm_source = 'bsearch' and utm_campaign = 'nonbrand' then orders.order_id else null end) as bsearch_nonbrand_orders,
+count(distinct case when utm_campaign = 'brand' then orders.order_id else null end) as brand_search_orders,
+count(distinct case when utm_source  is null and http_referer is not null then orders.order_id else null end) as organic_search_orders,
+count(distinct case when utm_source  is null and http_referer is null then orders.order_id else null end) as direct_type_in_orders
+from website_Sessions
+left join orders
+on website_sessions.website_session_id = orders.website_session_id
+group by 1,2
+order by 1,2
+;
+
+-- Next, let's show the overall session-to-order conversion rate trends for those 
+-- same channels, by quarter. Please also make a note of any periods where we made major improvements or optimizations
+
+select
+year(website_sessions.created_at) as yr,
+quarter(website_sessions.created_at) as qtr,
+count(distinct case when utm_source = 'gsearch' and utm_campaign = 'nonbrand' then orders.order_id else null end)
+/ count(distinct case when utm_source = 'gsearch' and utm_campaign = 'nonbrand' then website_sessions.website_session_id else null end) as gsearch_nonbrand_conv_rate,
+count(distinct case when utm_source = 'bsearch' and utm_campaign = 'nonbrand' then orders.order_id else null end)
+/ count(distinct case when utm_source = 'bsearch' and utm_campaign = 'nonbrand' then website_sessions.website_session_id else null end) as bsearch_nonbrand_conv_rate,
+count(distinct case when utm_campaign = 'brand'  then orders.order_id else null end)
+/ count(distinct case when utm_campaign = 'brand' then website_sessions.website_session_id else null end) as brand_conv_rate,
+count(distinct case when utm_source  is null and  http_referer is not null then  orders.order_id else null end)
+/ count(distinct case when utm_source is null and http_referer is not null  then website_sessions.website_session_id else null end) as organic_search_conv_rate,
+count(distinct case when utm_source is null and http_referer is null then orders.order_id else null end)
+/ count(distinct case when utm_source is null and http_referer is null then website_Sessions.website_Session_id else null end) as direct_type_in_conv_rate 
+from website_sessions
+left join orders
+on orders.website_session_id = website_sessions.website_Session_id 
+group by 1,2
+; 
