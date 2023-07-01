@@ -1,4 +1,4 @@
--- First, I'd like to show our volume growth can you pull session and order volume, trended by quarter for the life of the business? 
+-- 1. First, I'd like to show our volume growth can you pull session and order volume, trended by quarter for the life of the business? 
 -- since the most recent quarter is incomplete, you can decide how to handle it. 
 
 select 
@@ -14,7 +14,7 @@ order by 1,2
 ;
 
 
--- Next, let's showcase all of our efficiency improvements, i would love to show quarterly figures since we launched, 
+-- 2. Next, let's showcase all of our efficiency improvements, i would love to show quarterly figures since we launched, 
 -- for session-to-order conversion rate, revenue per order, and revenue per session. 
 
 select
@@ -29,7 +29,7 @@ on website_sessions.website_session_Id = orders.website_session_id
 group by 1,2
 order by 1,2 ;
 
--- i'd like to show how we've grown specific channels. Could you pull a quartely view of orders from Gsearch nonbrand,
+-- 3. i'd like to show how we've grown specific channels. Could you pull a quartely view of orders from Gsearch nonbrand,
 -- Bsearch nonbrand, brand search overall, organic search, and direct type-in?
 
 select
@@ -47,7 +47,7 @@ group by 1,2
 order by 1,2
 ;
 
--- Next, let's show the overall session-to-order conversion rate trends for those 
+-- 4. Next, let's show the overall session-to-order conversion rate trends for those 
 -- same channels, by quarter. Please also make a note of any periods where we made major improvements or optimizations
 
 select
@@ -68,3 +68,24 @@ left join orders
 on orders.website_session_id = website_sessions.website_Session_id 
 group by 1,2
 ; 
+
+-- 5. we've come a long way since the days of selling a single product. Let's pull monthly trending for revenue and margin by product, along with total sales and revenue. 
+-- Note anything you notice about seasonality.
+
+select
+year(created_at) as yr,
+month(created_at) as mo,
+sum(case when product_id = 1 then price_usd else null end) as mrfuzzy_revenue,
+sum(case when product_id = 1 then price_usd - cogs_usd else null end) as mrfuzzy_margin,
+sum(case when product_id = 2 then price_usd else null end) as lovebear_revenue,
+sum(case when product_id = 2 then price_usd - cogs_usd else null end) as lovebear_margin,
+sum(case when prouct_id = 3 then price_usd else null end) as birthdaybear_revenue,
+sum(case when product_id = 3 then price_usd - cogs_usd else null end) as birthdaybear_margin,
+sum(case when product_id = 4 then price_usd else null end) as minibear_revenue,
+sum(case when product_id = 4 then price_usd -cogs_usd else null end) as minibear_margin,
+sum(price_us) as total_revenue,
+sum(price_usd - cogs_usd) as total_margin
+from order_items
+group by 1,2
+order by 1,2;
+
